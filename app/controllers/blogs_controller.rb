@@ -20,9 +20,11 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
+    
 
     respond_to do |format|
       if @blog.save
+        BlogMailer.blog_mail(@blog).deliver
         format.html { redirect_to blogs_path(@blog), notice: 'blog was successfully created.' }
         format.json { render :show, status: :created, location: @blog }
       else
