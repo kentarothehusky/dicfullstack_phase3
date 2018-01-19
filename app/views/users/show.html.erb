@@ -3,7 +3,13 @@
 <h1><%= @user.name %>のページ</h1>
 
 <p>メールアドレス: <%= @user.email %></p>
-
+<!--html-->
+<!--<p>画像が入るはず <img scr="<%= @user.image %>"> </p>-->
+<!--rails-->
+<p> <%= image_tag(@user.image) %></p>
 
 <p button type="button" , class="btn btn-warning">
-<%= link_to "Back", webpages_path%></p>
+<%= link_to "Back", webpages_path %></p>
+
+<p button type="button" , class="btn btn-warning">
+<%= link_to "edit", edit_user_path %></p>

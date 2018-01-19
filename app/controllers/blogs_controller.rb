@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+# before_action動かす前にset_blogを発動させている
+
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -8,6 +10,8 @@ class BlogsController < ApplicationController
   def show
     @favorite = current_user.favorites.find_by(blog_id: @blog.id)
     @user = User.new
+    # エラー解消のため追記
+    # @blog = Blog.find_by([:id])
   end
 
   def new
@@ -61,7 +65,7 @@ class BlogsController < ApplicationController
   private
    
     def blog_params 
-      params.require(:blog).permit(:content,:title)
+      params.require(:blog).permit(:content,:title, :image)
     end
     
     def set_blog

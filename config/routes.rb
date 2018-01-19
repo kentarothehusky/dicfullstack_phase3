@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :webpages
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :edit, :update]
   resources :sessions, only: [:new, :create, :destroy]
   resources :blogs
   
