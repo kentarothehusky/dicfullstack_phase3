@@ -44,10 +44,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-  # 画像の上限を200pxにする
-  # process :resize_to_limit => [200, 200]
-    # process resize_to_fit: [900, 400]
-   
+
   # サムネイルを生成する設定
   # version :thumb do
   #   process :resize_to_fill => [40, 40, gravity = ::Magick::CenterGravity]
