@@ -8,8 +8,9 @@
 
 <% @blogs.each do |blog| %>
   <tr>
+    <td><%= blog.user.name %></td>
     <% if blog.user.id == current_user.id %>
-      <td><%= blog.title %></td>
+    <td><%= blog.title %></td>
       <td><%= blog.content %></td>
       <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
       <td><%= link_to "ブログを編集する", edit_blog_path(blog.id), data:{ confirm:'本当に編集していいですか？'} %></td>

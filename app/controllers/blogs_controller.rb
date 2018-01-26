@@ -10,8 +10,6 @@ class BlogsController < ApplicationController
   def show
     @favorite = current_user.favorites.find_by(blog_id: @blog.id)
     @user = User.new
-    # エラー解消のため追記
-    # @blog = Blog.find_by([:id])
   end
 
   def new

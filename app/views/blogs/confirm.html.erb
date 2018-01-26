@@ -12,4 +12,8 @@
   <%= f.hidden_field :title %>
   <%= f.hidden_field :content %>
   <%= f.submit "もどる" %>
+  
+<%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
+<%= image_tag(@blog.image.url) %>
+
 <% end %>
