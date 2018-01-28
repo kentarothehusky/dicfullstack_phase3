@@ -1,11 +1,18 @@
 <h1>Log in</h1>
-<%= form_with(scope: :session, url: sessions_path) do |f| %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.submit "Log in" %>
+<div class="container-fluid">
+    <nav class="menu">
+      <ul class="row">
+        <%= form_with(scope: :session, url: sessions_path) do |f| %>
+        
+        <li class="col-md-12"><%= f.label :email %></li>
+        <li class="col-md-12"><%= f.email_field :email %></li>
+        
+        <li class="col-md-12"><%= f.label :password %></li>
+        <li class="col-md-12"><%= f.password_field :password %></li>
+        
+        <button type="button" class="btn btn-success"><%= f.submit "Log in" %></button>
+      </ul>  
+    </nav>
+  </div>
 <% end %>

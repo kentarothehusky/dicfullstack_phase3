@@ -1,6 +1,5 @@
 class BlogsController < ApplicationController
 # before_action動かす前にset_blogを発動させている
-
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -59,7 +58,6 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
   end
 
-# blog_paramsが読み込まれないのでストロングパラメータを消してみる
   private
    
     def blog_params 
