@@ -21,7 +21,7 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
-    
+    @blog.image.retrieve_from_cache! params[:cache][:image]
 
     respond_to do |format|
       if @blog.save
@@ -61,7 +61,7 @@ class BlogsController < ApplicationController
   private
    
     def blog_params 
-      params.require(:blog).permit(:content,:title, :image)
+      params.require(:blog).permit(:content,:title, :image, :image_cache)
     end
     
     def set_blog

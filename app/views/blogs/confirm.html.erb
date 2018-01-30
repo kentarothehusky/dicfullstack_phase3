@@ -5,6 +5,10 @@
   <%= f.hidden_field :content %>
   <p>タイトル:<%= @blog.title %></p>
   <p>本文:<%= @blog.content %></p>
+  <!--追加＆要復習-->
+  <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
+  <%= image_tag(@blog.image) %>
+  <!--ここまで-->
   <%= f.submit "登録する" %>
 <% end %>
 
@@ -12,8 +16,4 @@
   <%= f.hidden_field :title %>
   <%= f.hidden_field :content %>
   <%= f.submit "もどる" %>
-  
-<%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
-<%= image_tag(@blog.image) %>
-
 <% end %>
