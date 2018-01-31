@@ -54,4 +54,7 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { host: 'gorailssince2017-kentarothehusky.c9users.io/' }
   config.action_mailer.delivery_method = :letter_opener
+  
+  config.web_console.whitelisted_ips = '0.0.0.0/0'
+
 end
